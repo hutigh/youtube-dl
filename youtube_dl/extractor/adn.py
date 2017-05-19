@@ -38,7 +38,9 @@ class ADNIE(InfoExtractor):
 
         enc_subtitles = self._download_webpage(
             'http://animedigitalnetwork.fr/' + sub_path,
-            video_id, fatal=False)
+            video_id, headers={
++                'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0'
++            }, fatal=False)
         if not enc_subtitles:
             return None
 
